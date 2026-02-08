@@ -1,1 +1,18 @@
-js
+<div class="cuponera-container">
+    <h2>✨ Galletas de la Suerte: Edición Cupones ✨</h2>
+    <p>Elige una galleta para descubrir tu premio del día:</p>
+    
+    <div id="galletas-flex">
+        <span class="cookie" onclick="revelarCupon()">🥠</span>
+        <span class="cookie" onclick="revelarCupon()">🥠</span>
+        <span class="cookie" onclick="revelarCupon()">🥠</span>
+    </div>
+
+    <div id="cupon-resultado" class="hidden">
+        <div class="ticket">
+            <p>🎟️ VALIDO POR:</p>
+            <h3 id="texto-cupon"></h3>
+        </div>
+        <button class="btn-reset" onclick="resetGalletas()">Elegir otra galleta</button>
+    </div>
+</div>
