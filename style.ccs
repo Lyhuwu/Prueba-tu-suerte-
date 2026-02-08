@@ -1,0 +1,46 @@
+.cuponera-container {
+    text-align: center;
+    background: #fff5f7;
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px dashed #ff4d6d;
+}
+
+#galletas-flex {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 50px;
+    margin: 20px 0;
+}
+
+.cookie {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.cookie:hover {
+    transform: scale(1.2) rotate(-10deg);
+}
+
+.ticket {
+    background: #ff4d6d;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px white dotted;
+    margin: 20px auto;
+    max-width: 300px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.hidden { display: none; }
+
+.btn-reset {
+    background: #ffb3c1;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
