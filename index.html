@@ -2,15 +2,16 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>La Suerte de Sofi ✨</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="cuponera-container">
-        <h1>✨ Galletas de la Suerte ✨</h1>
-        <p class="instrucciones">Elige una galleta para descubrir tu cupón de hoy, Sofi:</p>
+        <h1>✨ Tu Suerte de Hoy ✨</h1>
+        <p class="instrucciones">Elige una galleta para descubrir tu premio:</p>
         
         <div id="galletas-flex">
             <div class="cookie-wrapper" onclick="revelarCupon()">
@@ -26,9 +27,12 @@
 
         <div id="cupon-resultado" class="hidden">
             <div class="ticket">
-                <p class="ticket-header">🎟️ VÁLIDO POR:</p>
-                <h3 id="texto-cupon"></h3>
-                <p class="ticket-footer">❤️ Con amor, de tu equipo favorito ❤️</p>
+                <div class="ticket-content">
+                    <p class="ticket-header">🎟️ VÁLIDO POR:</p>
+                    <h3 id="texto-cupon"></h3>
+                    <div class="linea-punteada"></div>
+                    <p class="ticket-footer">❤️ Canjeable con tu equipo favorito ❤️</p>
+                </div>
             </div>
             <button class="btn-reset" onclick="resetGalletas()">Probar suerte otra vez</button>
         </div>
