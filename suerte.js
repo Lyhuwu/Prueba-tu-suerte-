@@ -34,7 +34,7 @@ function revelarCupon() {
     
     // Reactivar botón de guardar
     const btnGuardar = document.getElementById('btn-guardar');
-    btnGuardar.innerText = "📥 Guardar en mi Billetera";
+    btnGuardar.innerText = "📥 Guardar en mi billetera para usar después";
     btnGuardar.disabled = false;
     btnGuardar.style.background = "#ff8fa3";
 
