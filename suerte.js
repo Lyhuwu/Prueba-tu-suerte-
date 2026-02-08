@@ -91,7 +91,7 @@ function cargarCuponesGuardados() {
 
 // --- FUNCIÓN PARA USAR (BORRAR UNO) ---
 function usarCupon(index) {
-    if(!confirm("¿Segura que quieres usar este cupón ahora? Desaparecerá de la lista.")) return;
+    if(!confirm("¿Segura que quieres usar este cupón ahora? Desaparecerá de la lista. (Tómale foto)")) return;
 
     let guardados = JSON.parse(localStorage.getItem('misCuponesSofi')) || [];
     guardados.splice(index, 1); // Borra el elemento en esa posición
