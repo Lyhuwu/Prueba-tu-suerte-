@@ -34,8 +34,20 @@
                     <p class="ticket-footer">❤️ Canjeable con tu equipo favorito ❤️</p>
                 </div>
             </div>
-            <button class="btn-reset" onclick="resetGalletas()">Probar suerte otra vez</button>
+            
+            <div class="botones-accion">
+                <button id="btn-guardar" class="btn-guardar" onclick="guardarCupon()">📥 Guardar en mi Billetera</button>
+                <button class="btn-reset" onclick="resetGalletas()">Probar suerte otra vez</button>
+            </div>
         </div>
+    </div>
+
+    <div class="billetera-container">
+        <h2>👛 Mis Cupones Guardados</h2>
+        <div id="lista-cupones">
+            <p id="mensaje-vacio">Aún no has guardado cupones...</p>
+        </div>
+        <button class="btn-borrar-todo" onclick="borrarTodo()">🗑️ Borrar todo</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
