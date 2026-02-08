@@ -1,18 +1,39 @@
-<div class="cuponera-container">
-    <h2>✨ Galletas de la Suerte: Edición Cupones ✨</h2>
-    <p>Elige una galleta para descubrir tu premio del día:</p>
-    
-    <div id="galletas-flex">
-        <span class="cookie" onclick="revelarCupon()">🥠</span>
-        <span class="cookie" onclick="revelarCupon()">🥠</span>
-        <span class="cookie" onclick="revelarCupon()">🥠</span>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Suerte de Sofi ✨</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="cuponera-container">
+        <h1>✨ Galletas de la Suerte ✨</h1>
+        <p class="instrucciones">Elige una galleta para descubrir tu cupón de hoy, Sofi:</p>
+        
+        <div id="galletas-flex">
+            <div class="cookie-wrapper" onclick="revelarCupon()">
+                <span class="cookie">🥠</span>
+            </div>
+            <div class="cookie-wrapper" onclick="revelarCupon()">
+                <span class="cookie">🥠</span>
+            </div>
+            <div class="cookie-wrapper" onclick="revelarCupon()">
+                <span class="cookie">🥠</span>
+            </div>
+        </div>
+
+        <div id="cupon-resultado" class="hidden">
+            <div class="ticket">
+                <p class="ticket-header">🎟️ VÁLIDO POR:</p>
+                <h3 id="texto-cupon"></h3>
+                <p class="ticket-footer">❤️ Con amor, de tu equipo favorito ❤️</p>
+            </div>
+            <button class="btn-reset" onclick="resetGalletas()">Probar suerte otra vez</button>
+        </div>
     </div>
 
-    <div id="cupon-resultado" class="hidden">
-        <div class="ticket">
-            <p>🎟️ VALIDO POR:</p>
-            <h3 id="texto-cupon"></h3>
-        </div>
-        <button class="btn-reset" onclick="resetGalletas()">Elegir otra galleta</button>
-    </div>
-</div>
+    <script src="suerte.js"></script>
+</body>
+</html>
