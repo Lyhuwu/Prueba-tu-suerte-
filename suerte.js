@@ -5,19 +5,19 @@ const cupones = [
     "Unos besotes 😘",
     "Un muamuamuamua 👄",
     "Un ah ah ah ah 🔥",
-    "Evasión de pelea, repele la pelea y debemos amarnos mucho sisisis 🛡️💖"
+    "Evasión de pelea: repele la pelea y debemos amarnos mucho sisisis 🛡️💖"
 ];
 
 function revelarCupon() {
     const fraseAleatoria = cupones[Math.floor(Math.random() * cupones.length)];
     document.getElementById('texto-cupon').innerText = fraseAleatoria;
     
-    // Ocultar galletas y mostrar el resultado
+    // Ocultar galletas y mostrar resultado
     document.getElementById('galletas-flex').classList.add('hidden');
     document.getElementById('cupon-resultado').classList.remove('hidden');
 
-    // ¡Lanzar el confeti!
-    dispararConfeti();
+    // Lanzar confeti
+    lanzarConfeti();
 }
 
 function resetGalletas() {
@@ -25,29 +25,23 @@ function resetGalletas() {
     document.getElementById('cupon-resultado').classList.add('hidden');
 }
 
-function dispararConfeti() {
-    // Esto lanza confeti desde los dos lados de la pantalla
-    var duration = 3 * 1000;
-    var end = Date.now() + duration;
+function lanzarConfeti() {
+    // Configuración para que se vea bien en celular (explosión desde el centro)
+    var count = 200;
+    var defaults = {
+        origin: { y: 0.7 },
+        zIndex: 9999
+    };
 
-    (function frame() {
-        confetti({
-            particleCount: 3,
-            angle: 60,
-            spread: 55,
-            origin: { x: 0 },
-            colors: ['#ff4d6d', '#ffb3c1', '#ffffff']
-        });
-        confetti({
-            particleCount: 3,
-            angle: 120,
-            spread: 55,
-            origin: { x: 1 },
-            colors: ['#ff4d6d', '#ffb3c1', '#ffffff']
-        });
+    function fire(particleRatio, opts) {
+        confetti(Object.assign({}, defaults, opts, {
+            particleCount: Math.floor(count * particleRatio)
+        }));
+    }
 
-        if (Date.now() < end) {
-            requestAnimationFrame(frame);
-        }
-    }());
+    fire(0.25, { spread: 26, startVelocity: 55 });
+    fire(0.2, { spread: 60 });
+    fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+    fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+    fire(0.1, { spread: 120, startVelocity: 45 });
 }
