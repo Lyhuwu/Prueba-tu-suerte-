@@ -1,46 +1,144 @@
-.cuponera-container {
-    text-align: center;
-    background: #fff5f7;
-    padding: 30px;
-    border-radius: 20px;
-    border: 2px dashed #ff4d6d;
-}
+/* style.css - Versión Final Móvil */
 
-#galletas-flex {
+body {
+    background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%);
+    font-family: 'Fredoka', sans-serif; /* Fuente redondita y amable */
     display: flex;
     justify-content: center;
-    gap: 20px;
-    font-size: 50px;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px; /* Margen para que no pegue a los bordes del celular */
+    box-sizing: border-box;
+}
+
+.cuponera-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 20px;
+    border-radius: 25px;
+    border: 4px solid #fff;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.25);
+    width: 100%;
+    max-width: 380px; /* Ancho ideal para celulares */
+}
+
+h1 {
+    font-family: 'Pacifico', cursive; /* Fuente tipo firma */
+    color: #ff4d6d;
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 0px rgba(255, 200, 200, 0.5);
+}
+
+.instrucciones {
+    color: #885566;
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+/* --- GALLETAS --- */
+#galletas-flex {
+    display: flex;
+    justify-content: space-around; /* Distribuye espacio igual */
+    align-items: center;
     margin: 20px 0;
 }
 
 .cookie {
+    font-size: 65px; /* Tamaño ajustado para que quepan 3 en celular */
     cursor: pointer;
+    display: block;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+.cookie-wrapper {
     transition: transform 0.2s;
+    animation: flotar 3s ease-in-out infinite;
 }
 
-.cookie:hover {
-    transform: scale(1.2) rotate(-10deg);
+/* Animación de flotar escalonada */
+.cookie-wrapper:nth-child(1) { animation-delay: 0s; }
+.cookie-wrapper:nth-child(2) { animation-delay: 0.5s; }
+.cookie-wrapper:nth-child(3) { animation-delay: 1s; }
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
 
+.cookie-wrapper:active {
+    transform: scale(0.9); /* Efecto de presionar */
+}
+
+/* --- TICKET / CUPÓN --- */
 .ticket {
     background: #ff4d6d;
     color: white;
-    padding: 20px;
-    border-radius: 10px;
-    border: 3px white dotted;
+    padding: 5px;
+    border-radius: 15px;
     margin: 20px auto;
-    max-width: 300px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transform: rotate(-1deg);
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 20px rgba(255, 77, 109, 0.3);
 }
 
-.hidden { display: none; }
+.ticket-content {
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    padding: 20px;
+    background: #ff4d6d;
+}
 
+.ticket-header {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin: 0;
+    opacity: 0.9;
+    text-transform: uppercase;
+}
+
+h3#texto-cupon {
+    font-size: 1.4rem;
+    margin: 15px 0;
+    line-height: 1.3;
+}
+
+.linea-punteada {
+    border-bottom: 2px dashed rgba(255,255,255,0.4);
+    margin: 15px 0;
+}
+
+.ticket-footer {
+    font-size: 0.75rem;
+    font-style: italic;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Botón */
 .btn-reset {
     background: #ffb3c1;
+    color: #a4133c;
     border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
-    font-weight: bold;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(255, 179, 193, 0.5);
+    transition: transform 0.2s;
+}
+
+.btn-reset:active {
+    transform: scale(0.95);
+}
+
+.hidden { display: none !important; }
+
+@keyframes popIn {
+    from { transform: scale(0.5) rotate(-5deg); opacity: 0; }
+    to { transform: scale(1) rotate(-1deg); opacity: 1; }
 }
