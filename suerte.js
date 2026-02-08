@@ -3,11 +3,20 @@ const cupones = [
     "Dejarte ganar en lo que sea (nee mi equipo) 🎮",
     "Unos besitos 💋",
     "Unos besotes 😘",
+    "Un abachito💞",
+    "Cita en cafetería",
+    "Cita en el acuario 🐧",
     "Un muamuamuamua 👄",
+    "Una cita a donde queya",
+    "Eliminar al gallo de pelea",
     "Un ah ah ah ah 🔥",
+    "Tu y yo toda le eternidad",
     "Evasión de pelea: repele la pelea y debemos amarnos mucho sisisis 🛡️💖",
-    "Vale por un abrazo de oso 🐻",
-    "Comida favorita hecha por mi o pagada por mi 🍔"
+    "Vale por abachote 🫂",
+    "Comida favorita 🍔",
+    "Romper distancia entre nosotras yadiosmio testaño",
+    "Ver una peli juntitas💖",
+    "Una tarde juntitas"
 ];
 
 let cuponActualTexto = "";
